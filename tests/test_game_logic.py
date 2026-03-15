@@ -1,7 +1,7 @@
 import ast
 from pathlib import Path
 
-from logic_utils import check_guess
+from logic_utils import build_new_game_state, check_guess
 
 def test_winning_guess():
     # If the secret is 50 and guess is 50, it should be a win
@@ -38,3 +38,17 @@ def test_attempt_limits_are_ordered_easy_normal_hard():
     assert attempt_limit_map is not None
     assert attempt_limit_map["Easy"] > attempt_limit_map["Normal"]
     assert attempt_limit_map["Normal"] > attempt_limit_map["Hard"]
+
+# Tested: build_new_game_state returns expected game state structure with correct secret number
+def test_build_new_game_state_resets_all_game_fields(monkeypatch):
+    monkeypatch.setattr("logic_utils.random.randint", lambda low, high: 12)
+
+    state = build_new_game_state(1, 20)
+
+    assert state == {
+        "attempts": 0,
+        "secret": 12,
+        "score": 0,
+        "status": "playing",
+        "history": [],
+    }

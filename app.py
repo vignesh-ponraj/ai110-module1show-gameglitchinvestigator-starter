@@ -1,6 +1,8 @@
 import random
 import streamlit as st
 
+from logic_utils import build_new_game_state
+
 def get_range_for_difficulty(difficulty: str):
     if difficulty == "Easy":
         return 1, 20
@@ -93,7 +95,6 @@ st.sidebar.caption(f"Attempts allowed: {attempt_limit}")
 if "secret" not in st.session_state:
     st.session_state.secret = random.randint(low, high)
 
-# FIXME: attempts left logic breaks here
 if "attempts" not in st.session_state:
     st.session_state.attempts = 1
 
@@ -128,14 +129,16 @@ raw_guess = st.text_input(
 col1, col2, col3 = st.columns(3)
 with col1:
     submit = st.button("Submit Guess 🚀")
+# FIXED: New game button was not starting a new game properly, now it resets all game state fields and starts a new game as expected.
 with col2:
     new_game = st.button("New Game 🔁")
 with col3:
     show_hint = st.checkbox("Show hint", value=True)
 
 if new_game:
-    st.session_state.attempts = 0
-    st.session_state.secret = random.randint(1, 100)
+    for key, value in build_new_game_state(low, high).items():
+        st.session_state[key] = value
+    st.session_state[f"guess_input_{difficulty}"] = ""
     st.success("New game started.")
     st.rerun()
 

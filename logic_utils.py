@@ -1,3 +1,5 @@
+import random
+
 def get_range_for_difficulty(difficulty: str):
     """Return (low, high) inclusive range for a given difficulty."""
     if difficulty == "Easy":
@@ -7,6 +9,17 @@ def get_range_for_difficulty(difficulty: str):
     if difficulty == "Hard":
         return 1, 50
     return 1, 100
+
+
+def build_new_game_state(low: int, high: int):
+    """Return a fresh game state for the selected difficulty range."""
+    return {
+        "attempts": 0,
+        "secret": random.randint(low, high),
+        "score": 0,
+        "status": "playing",
+        "history": [],
+    }
 
 
 def parse_guess(raw: str):

@@ -17,17 +17,22 @@ Buggy and unreliable
 ## 2. How did you use AI as a teammate?
 
 - Which AI tools did you use on this project (for example: ChatGPT, Gemini, Copilot)?
+- - Copilot
 - Give one example of an AI suggestion that was correct (including what the AI suggested and how you verified the result).
+- - It found out the exact location where attempts logic was messing up and needs to be fixed so that Easy > Medium > Hard. I verified it by reading through the lines of code Copilot marked as the logic impact, finally identifying the root cause was rightly found by Copilot too.
 - Give one example of an AI suggestion that was incorrect or misleading (including what the AI suggested and how you verified the result).
+- - Not in terms of bug fixes in this module, but issues with pytest commands and Copilot Agent. When venv is running, and Copilot Agent tries to run the pytest command, it doesn't work. And Copilot suggested I was missing imports. That wasn't the case, it was as simple as me manually running the command in the terminal and it worked.
 
 ---
 
 ## 3. Debugging and testing your fixes
 
 - How did you decide whether a bug was really fixed?
-- Describe at least one test you ran (manual or using pytest)  
-  and what it showed you about your code.
+- - Verified the test case, ran test and see if it passed. And then final verification by doing UI testing.
+- Describe at least one test you ran (manual or using pytest) and what it showed you about your code.
+- - I verified both the test cases written by Copilot and it had the right assertion logic, one was ensuring attempts are in this order Easy > Medium > Hard. 
 - Did AI help you design or understand any tests? How?
+- - Yes it helped me design the two tests for the bugs I found. One by going through the fix using Copilot Agent, it already had context on what the problem was and what fixed it, more importantly the what is the expected outcome. The test case prompt was to design it in way that it tests all three parts, which is the problem, fix applied and expected outcome.
 
 ---
 
