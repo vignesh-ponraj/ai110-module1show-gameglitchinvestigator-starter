@@ -5,9 +5,13 @@ Answer each question in 3 to 5 sentences. Be specific and honest about what actu
 ## 1. What was broken when you started?
 
 - What did the game look like the first time you ran it?
+Buggy and unreliable
 - List at least two concrete bugs you noticed at the start  
   (for example: "the secret number kept changing" or "the hints were backwards").
-
+1. the hints were wrong
+2. "New game" button doesn't work
+3. Easy mode has lower attempts than Normal mode. Should be the opposite.
+4. The attempts left is off by one.
 ---
 
 ## 2. How did you use AI as a teammate?
