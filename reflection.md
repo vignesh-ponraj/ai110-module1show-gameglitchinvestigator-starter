@@ -52,4 +52,4 @@ Buggy and unreliable
 - What is one habit or strategy from this project that you want to reuse in future labs or projects?
 - - Using the commit summary generation in Source Control is definitely something I want to keep using.
 - What is one thing you would do differently next time you work with AI on a coding task?
-- - It's not good to take things at face value. There could be deeper problems lurking when AI tries to fix it superficially and say it's done. So we have to exercise our judgement and dig deeper/ probe more so that we get to the root issue and fix it.
+- - It's best to not take things at face value. There could be deeper problems lurking when AI tries to fix it superficially and say it's done. So we have to exercise our judgement and dig deeper/ probe more so that we get to the root issue and fix it.
