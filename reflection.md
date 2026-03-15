@@ -39,14 +39,17 @@ Buggy and unreliable
 ## 4. What did you learn about Streamlit and state?
 
 - In your own words, explain why the secret number kept changing in the original app.
+- - The number kept changing because Streamlit reruns the script every time we interact with the website.
 - How would you explain Streamlit "reruns" and session state to a friend who has never used Streamlit?
+- - It's very much like running refresh everytime a button is pressed.
 - What change did you make that finally gave the game a stable secret number?
+- - By adding the new game reset behavior so that the game rebuilds all core game fields together.
 
 ---
 
 ## 5. Looking ahead: your developer habits
 
 - What is one habit or strategy from this project that you want to reuse in future labs or projects?
-  - This could be a testing habit, a prompting strategy, or a way you used Git.
+- - Using the commit summary generation in Source Control is definitely something I want to keep using.
 - What is one thing you would do differently next time you work with AI on a coding task?
-- In one or two sentences, describe how this project changed the way you think about AI generated code.
+- - It's not good to take things at face value. There could be deeper problems lurking when AI tries to fix it superficially and say it's done. So we have to exercise our judgement and dig deeper/ probe more so that we get to the root issue and fix it.
